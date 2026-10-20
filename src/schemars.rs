@@ -10,10 +10,9 @@ impl JsonSchema for HexColor {
 
     fn json_schema(_: &mut schemars::SchemaGenerator) -> schemars::Schema {
         json_schema!({
-            "desc": "Hex Color",
+            "description": "Hex color: #RGB, #RGBA, #RRGGBB or #RRGGBBAA",
             "type": "string",
-            "pattern": "^#([a-fA-F0-9]{3}|[a-fA-F0-9]{6}[]{8})#"
-
+            "pattern": "^#([a-fA-F0-9]{3,4}|[a-fA-F0-9]{6}|[a-fA-F0-9]{8})$"
         })
     }
 }
